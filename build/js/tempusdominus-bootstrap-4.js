@@ -403,6 +403,7 @@ var DateTimePicker = function ($, moment) {
         };
 
         DateTimePicker.prototype._setValue = function _setValue(targetMoment, index) {
+            if (this._dates[index] == null) return;
             var oldDate = this.unset ? null : this._dates[index];
             var outpValue = '';
             // case of calling setValue(null or false)
